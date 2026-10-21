@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonal | SEO & Page Speed Optimization Specialist</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            cyan: '#00F0FF',
+                            purple: '#7000FF',
+                            blue: '#0066FF',
+                            dark: '#0B0F17',
+                            card: '#121824',
+                            border: '#1E293B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 20px rgba(0, 240, 255, 0.35)',
+                        'neon-purple': '0 0 20px rgba(112, 0, 255, 0.35)',
+                        'glow': '0 0 35px rgba(0, 240, 255, 0.2)'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Glassmorphism styling */
+        .glass-panel {
+            background: rgba(18, 24, 36, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .light .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        /* Gradient text effect */
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #00F0FF 0%, #7000FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-alt {
+            background: linear-gradient(135deg, #3B82F6 0%, #00F0FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Animated Gradient Background */
+        .gradient-bg {
+            background: radial-gradient(circle at 15% 20%, rgba(0, 240, 255, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 85% 60%, rgba(112, 0, 255, 0.1) 0%, transparent 40%);
+        }
+
+        /* Slider Custom Styling */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 22px;
+            width: 22px;
+            border-radius: 50%;
+            background: #00F0FF;
+            cursor: pointer;
+            box-shadow: 0 0 10px #00F0FF;
+            transition: all 0.2s ease;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 18px #00F0FF;
+        }
+
+        /* Typing Effect Cursor */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Speedometer Gauge Arc */
+        .gauge-circle {
+            transition: stroke-dashoffset 1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-cyber-dark text-slate-100 transition-colors duration-300 dark:bg-cyber-dark dark:text-slate-100 light:bg-slate-50 light:text-slate-800 gradient-bg min-h-screen selection:bg-cyber-cyan selection:text-black">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 glass-panel border-b border-slate-800/50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="#hero" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyber-cyan to-cyber-purple flex items-center justify-center font-black text-xl text-black shadow-neon-cyan transform group-hover:scale-105 transition-transform">
+                    S
+                </div>
+                <span class="text-xl font-bold tracking-tight text-white dark:text-white light:text-slate-900">
+                    SONAL<span class="text-cyber-cyan">.SEO</span>
+                </span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-300 dark:text-slate-300 light:text-slate-600">
+                <a href="#services" class="hover:text-cyber-cyan transition-colors">Services</a>
+                <a href="#calculator" class="hover:text-cyber-cyan transition-colors">ROI Calculator</a>
+                <a href="#comparison" class="hover:text-cyber-cyan transition-colors">Before/After</a>
+                <a href="#portfolio" class="hover:text-cyber-cyan transition-colors">Case Studies</a>
+                <a href="#testimonials" class="hover:text-cyber-cyan transition-colors">Reviews</a>
+            </nav>
+
+            <!-- Actions & Theme Toggle -->
+            <div class="hidden md:flex items-center space-x-4">
+                <!-- Theme Toggle Button -->
+                <button id="themeToggleBtn" aria-label="Toggle Theme" class="p-2.5 rounded-xl border border-slate-700 dark:border-slate-700 light:border-slate-300 hover:border-cyber-cyan text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-cyber-cyan transition-all">
+                    <i class="fa-solid fa-moon dark:inline hidden text-lg"></i>
+                    <i class="fa-solid fa-sun light:inline hidden dark:hidden text-lg text-amber-500"></i>
+                </button>
+
+                <!-- Audit CTA Button -->
+                <a href="#audit" class="px-5 py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-cyber-cyan to-cyber-blue text-black hover:shadow-neon-cyan hover:opacity-95 transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-bolt mr-1.5"></i> Get Free Audit
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <div class="flex items-center gap-3 md:hidden">
+                <button id="themeToggleBtnMobile" aria-label="Toggle Theme Mobile" class="p-2 rounded-lg border border-slate-700 text-slate-300">
+                    <i class="fa-solid fa-moon dark:inline hidden"></i>
+                    <i class="fa-solid fa-sun light:inline hidden dark:hidden text-amber-500"></i>
+                </button>
+
+                <button id="mobileMenuBtn" aria-label="Toggle Menu" class="text-slate-300 hover:text-white text-2xl p-1 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobileMenu" class="hidden md:hidden glass-panel border-t border-slate-800 px-6 py-6 space-y-4 text-center mt-3">
+            <a href="#services" class="block text-slate-300 hover:text-cyber-cyan text-lg py-2">Services</a>
+            <a href="#calculator" class="block text-slate-300 hover:text-cyber-cyan text-lg py-2">ROI Calculator</a>
+            <a href="#comparison" class="block text-slate-300 hover:text-cyber-cyan text-lg py-2">Before / After</a>
+            <a href="#portfolio" class="block text-slate-300 hover:text-cyber-cyan text-lg py-2">Case Studies</a>
+            <a href="#testimonials" class="block text-slate-300 hover:text-cyber-cyan text-lg py-2">Testimonials</a>
+            <a href="#audit" class="block w-full py-3 rounded-xl font-bold bg-gradient-to-r from-cyber-cyan to-cyber-blue text-black shadow-neon-cyan">
+                Get Free Audit
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative py-16 md:py-28 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                        <!-- Badge -->
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyber-cyan/30 bg-cyber-cyan/10 text-cyber-cyan text-xs sm:text-sm font-semibold tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-cyber-cyan animate-ping"></span>
+                            <span>#1 Technical SEO & Performance Engineer</span>
+                        </div>
+
+                        <!-- Headline with Typing Animation -->
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                            Elevate Your Web Speed & Search Rankings with <br class="hidden sm:block">
+                            <span class="text-gradient-primary">Sonal</span>
+                        </h1>
+
+                        <div class="text-xl sm:text-2xl font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 min-h-[3rem] flex items-center justify-center lg:justify-start">
+                            <span>Specialized in &nbsp;</span>
+                            <span id="typingText" class="text-cyber-cyan font-bold typing-cursor"></span>
+                        </div>
+
+                        <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            I help modern tech enterprises, e-commerce stores, and high-growth brands eliminate page latency, pass Core Web Vitals, and scale organic Google revenue predictably.
+                        </p>
+
+                        <!-- Call To Actions -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#audit" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base bg-gradient-to-r from-cyber-cyan via-blue-500 to-cyber-purple text-black hover:shadow-neon-cyan transform hover:-translate-y-1 transition-all text-center">
+                                <i class="fa-solid fa-bolt mr-2"></i> Get Free Instant Audit
+                            </a>
+                            <a href="#calculator" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base border border-slate-700 dark:border-slate-700 light:border-slate-300 hover:border-cyber-cyan hover:text-cyber-cyan transition-all text-center glass-panel">
+                                <i class="fa-solid fa-calculator mr-2"></i> Calculate Speed ROI
+                            </a>
+                        </div>
+
+                        <!-- Live Stats Bar -->
+                        <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-black text-white dark:text-white light:text-slate-900"><span class="counter" data-target="99">0</span>%</p>
+                                <p class="text-xs sm:text-sm text-slate-400">Avg. Speed Score</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-black text-cyber-cyan"><span class="counter" data-target="3">0</span>.2x</p>
+                                <p class="text-xs sm:text-sm text-slate-400">Traffic Growth</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-black text-purple-400"><span class="counter" data-target="180">0</span>+</p>
+                                <p class="text-xs sm:text-sm text-slate-400">Sites Optimized</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Graphic / Lighthouse Dashboard Card -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none glass-panel rounded-3xl p-6 sm:p-8 border border-slate-700/60 shadow-2xl">
+                            <!-- Header of Card -->
+                            <div class="flex justify-between items-center mb-6">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <span class="text-xs text-slate-400 font-mono"><i class="fa-solid fa-shield-halved text-cyber-cyan mr-1"></i> Lighthouse v11.0</span>
+                            </div>
+
+                            <!-- Big Score Circle Graphic -->
+                            <div class="flex flex-col items-center justify-center py-6">
+                                <div class="relative w-44 h-44 flex items-center justify-center">
+                                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                        <!-- Background Circle -->
+                                        <circle cx="50" cy="50" r="42" stroke="currentColor" stroke-width="8" class="text-slate-800" fill="transparent"></circle>
+                                        <!-- Gauge Animated Circle -->
+                                        <circle id="heroGauge" cx="50" cy="50" r="42" stroke="url(#cyanGradient)" stroke-width="8" stroke-dasharray="264" stroke-dashoffset="264" stroke-linecap="round" class="gauge-circle" fill="transparent"></circle>
+                                        <defs>
+                                            <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="#00F0FF" />
+                                                <stop offset="100%" stop-color="#7000FF" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <div class="absolute text-center">
+                                        <span class="text-5xl font-black text-white dark:text-white light:text-slate-900 tracking-tight" id="heroScoreVal">0</span>
+                                        <span class="block text-xs font-semibold text-emerald-400 uppercase tracking-widest mt-1">PERFECT</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Performance Metrics breakdown grid -->
+                            <div class="grid grid-cols-2 gap-3 mt-4 text-xs font-mono">
+                                <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex justify-between items-center">
+                                    <span class="text-slate-400">First Contentful Paint</span>
+                                    <span class="text-emerald-400 font-bold">0.4s</span>
+                                </div>
+                                <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex justify-between items-center">
+                                    <span class="text-slate-400">Speed Index</span>
+                                    <span class="text-emerald-400 font-bold">0.7s</span>
+                                </div>
+                                <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex justify-between items-center">
+                                    <span class="text-slate-400">Largest Contentful</span>
+                                    <span class="text-emerald-400 font-bold">0.8s</span>
+                                </div>
+                                <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex justify-between items-center">
+                                    <span class="text-slate-400">Cumulative Layout</span>
+                                    <span class="text-emerald-400 font-bold">0.00</span>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Floating Tag -->
+                            <div class="mt-6 p-3 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/30 text-center text-xs text-cyber-cyan font-semibold flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-check-circle"></i> 100% Passed Core Web Vitals Assessment
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SHOWCASE SECTION -->
+        <section id="services" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-xs uppercase font-bold text-cyber-cyan tracking-widest">Mastery & Engineering</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white dark:text-white light:text-slate-900">
+                        Tailored SEO & Page Speed Solutions
+                    </p>
+                    <p class="text-slate-400">
+                        Comprehensive optimizations engineered to maximize organic visibility, pass Google audits, and convert visitors into loyal customers.
+                    </p>
+                </div>
+
+                <!-- Services Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1 -->
+                    <div class="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-cyber-cyan/50 transition-all duration-300 group hover:-translate-y-2">
+                        <div class="w-14 h-14 rounded-2xl bg-cyber-cyan/10 border border-cyber-cyan/30 text-cyber-cyan flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-cyber-cyan group-hover:text-black transition-all">
+                            <i class="fa-solid fa-gauge-high"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 mb-3">Page Speed Enhancement</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Eliminate render-blocking JS/CSS, optimize server TTFB, compress payload sizes, and implement advanced cache strategies for millisecond load times.
+                        </p>
+                        <ul class="text-xs space-y-2 text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyber-cyan"></i> Minification & Code Splitting</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyber-cyan"></i> WebP/AVIF Image Conversion</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyber-cyan"></i> CDN & Server TTFB Tweak</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-cyber-purple/50 transition-all duration-300 group hover:-translate-y-2">
+                        <div class="w-14 h-14 rounded-2xl bg-cyber-purple/10 border border-cyber-purple/30 text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-cyber-purple group-hover:text-white transition-all">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 mb-3">Core Web Vitals Optimization</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Target Google’s key UX ranking factors: LCP (Largest Contentful Paint), INP (Interaction to Next Paint), and CLS (Cumulative Layout Shift).
+                        </p>
+                        <ul class="text-xs space-y-2 text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400"></i> Zero Layout Shifts Fix</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400"></i> Critical Path CSS Rendering</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400"></i> Main-Thread Work Optimization</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-blue-500/50 transition-all duration-300 group hover:-translate-y-2">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 mb-3">Technical SEO Audit</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Deep website architectural analysis fixing indexing blocks, schema markup, JS rendering issues, canonicals, and XML sitemaps.
+                        </p>
+                        <ul class="text-xs space-y-2 text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400"></i> Structured Schema JSON-LD</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400"></i> Crawl Budget Optimization</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400"></i> JavaScript SEO Fixes</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-cyber-cyan/50 transition-all duration-300 group hover:-translate-y-2">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-black transition-all">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 mb-3">On-Page & Strategic Content</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Data-driven keyword mapping, semantic entity optimization, internal link silo creation, and search intent targeting.
+                        </p>
+                        <ul class="text-xs space-y-2 text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Keyword Intent Mapping</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Semantic Content Clustering</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> On-Page Meta Optimization</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 group hover:-translate-y-2">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-black transition-all">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 mb-3">Conversion Rate (CRO)</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Turn faster page speed into raw sales. Frictionless UX tweaks, CTA positioning, and checkout optimization to lower bounce rates.
+                        </p>
+                        <ul class="text-xs space-y-2 text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Bounce Rate Reduction</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Checkout Friction Elimination</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> UX Heatmap Analytics</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-pink-500/50 transition-all duration-300 group hover:-translate-y-2">
+                        <div class="w-14 h-14 rounded-2xl bg-pink-500/10 border border-pink-500/30 text-pink-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-pink-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 mb-3">Analytics & Continuous Monitoring</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Full GA4 setup, custom looker dashboards, continuous performance monitoring, and proactive regression prevention.
+                        </p>
+                        <ul class="text-xs space-y-2 text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pink-400"></i> GA4 & Search Console Setup</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pink-400"></i> Automated Alert Triggers</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pink-400"></i> Monthly Executive Reporting</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE ROI & SITE SPEED IMPACT CALCULATOR SECTION -->
+        <section id="calculator" class="py-20 relative bg-slate-900/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="glass-panel rounded-3xl border border-slate-700/80 p-6 sm:p-12 shadow-2xl overflow-hidden relative">
+                    <!-- Glow Accents -->
+                    <div class="absolute -top-24 -left-24 w-72 h-72 bg-cyber-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-cyber-purple/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        
+                        <!-- Sliders Controls -->
+                        <div class="lg:col-span-7 space-y-8">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-widest text-cyber-cyan">Interactive ROI Tool</span>
+                                <h2 class="text-3xl font-extrabold text-white dark:text-white light:text-slate-900 mt-1">
+                                    Calculate How Much Slow Speed Costs You
+                                </h2>
+                                <p class="text-slate-400 text-sm mt-2">
+                                    Every second delay reduces conversions by 7%. Adjust the sliders below to estimate lost revenue and growth potential.
+                                </p>
+                            </div>
+
+                            <!-- Slider 1: Current Load Time -->
+                            <div class="space-y-3 bg-slate-900/60 p-6 rounded-2xl border border-slate-800">
+                                <div class="flex justify-between items-center text-sm">
+                                    <label for="speedSlider" class="font-medium text-slate-300">Current Load Time (seconds)</label>
+                                    <span id="speedVal" class="font-mono text-lg font-bold text-cyber-cyan">5.0 s</span>
+                                </div>
+                                <input type="range" id="speedSlider" min="1.0" max="10.0" step="0.1" value="5.0" class="w-full bg-slate-800 h-2 rounded-lg appearance-none focus:outline-none">
+                                <div class="flex justify-between text-xs text-slate-500 font-mono">
+                                    <span>1.0s (Fast)</span>
+                                    <span>5.0s (Average)</span>
+                                    <span>10.0s (Critical)</span>
+                                </div>
+                            </div>
+
+                            <!-- Slider 2: Monthly Traffic -->
+                            <div class="space-y-3 bg-slate-900/60 p-6 rounded-2xl border border-slate-800">
+                                <div class="flex justify-between items-center text-sm">
+                                    <label for="trafficSlider" class="font-medium text-slate-300">Monthly Visitors</label>
+                                    <span id="trafficVal" class="font-mono text-lg font-bold text-cyber-cyan">50,000</span>
+                                </div>
+                                <input type="range" id="trafficSlider" min="5000" max="500000" step="5000" value="50000" class="w-full bg-slate-800 h-2 rounded-lg appearance-none focus:outline-none">
+                                <div class="flex justify-between text-xs text-slate-500 font-mono">
+                                    <span>5k</span>
+                                    <span>250k</span>
+                                    <span>500k+</span>
+                                </div>
+                            </div>
+
+                            <!-- Slider 3: Average Order / Lead Value -->
+                            <div class="space-y-3 bg-slate-900/60 p-6 rounded-2xl border border-slate-800">
+                                <div class="flex justify-between items-center text-sm">
+                                    <label for="orderSlider" class="font-medium text-slate-300">Average Order / Lead Value ($)</label>
+                                    <span id="orderVal" class="font-mono text-lg font-bold text-cyber-cyan">$ 80</span>
+                                </div>
+                                <input type="range" id="orderSlider" min="10" max="1000" step="10" value="80" class="w-full bg-slate-800 h-2 rounded-lg appearance-none focus:outline-none">
+                            </div>
+                        </div>
+
+                        <!-- Results Output Panel -->
+                        <div class="lg:col-span-5">
+                            <div class="bg-gradient-to-b from-slate-900 to-cyber-dark p-8 rounded-3xl border border-cyber-cyan/30 text-center relative shadow-neon-cyan/10">
+                                <h3 class="text-xs uppercase font-bold text-slate-400 tracking-wider">Estimated Annual Impact</h3>
+                                
+                                <div class="my-6">
+                                    <span class="block text-xs text-red-400 font-semibold uppercase mb-1">Estimated Yearly Lost Revenue</span>
+                                    <span id="lostRevenue" class="text-4xl sm:text-5xl font-black text-red-500 font-mono tracking-tight">$0</span>
+                                </div>
+
+                                <div class="my-6 pt-6 border-t border-slate-800">
+                                    <span class="block text-xs text-emerald-400 font-semibold uppercase mb-1">Potential Monthly Traffic Boost</span>
+                                    <span id="trafficGain" class="text-3xl font-bold text-emerald-400 font-mono">+0 visitors</span>
+                                </div>
+
+                                <div class="p-4 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/30 text-xs text-slate-300 text-left space-y-2 mt-4">
+                                    <p><i class="fa-solid fa-circle-check text-cyber-cyan mr-1"></i> Optimizing speed to <strong>0.8s</strong> can improve conversions by up to <strong>28%</strong>.</p>
+                                    <p><i class="fa-solid fa-circle-check text-cyber-cyan mr-1"></i> Google prioritizes sites loading under 2.5s for top rankings.</p>
+                                </div>
+
+                                <a href="#audit" class="block w-full py-3.5 mt-6 rounded-xl font-bold text-black bg-cyber-cyan hover:shadow-neon-cyan transition-all text-center">
+                                    Recover My Lost Revenue Now
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BEFORE / AFTER PERFORMANCE COMPARISON TOGGLE/SLIDER -->
+        <section id="comparison" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Title -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-xs uppercase font-bold text-cyber-cyan tracking-widest">Real Results</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white dark:text-white light:text-slate-900">
+                        Interactive Before & After Optimization
+                    </p>
+                    <p class="text-slate-400">
+                        Slide or toggle to inspect how Sonal transforms slow, low-ranking websites into high-speed Google powerhouses.
+                    </p>
+                </div>
+
+                <!-- Interactive Comparison Card -->
+                <div class="max-w-4xl mx-auto glass-panel rounded-3xl border border-slate-700/80 p-6 sm:p-10 shadow-2xl">
+                    
+                    <!-- Toggle Switch -->
+                    <div class="flex justify-center mb-10">
+                        <div class="bg-slate-900 p-1.5 rounded-2xl border border-slate-800 flex items-center gap-2">
+                            <button id="beforeBtn" class="px-6 py-2.5 rounded-xl font-bold text-sm transition-all bg-slate-800 text-slate-400 hover:text-white">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-500 mr-2"></i> Before Sonal
+                            </button>
+                            <button id="afterBtn" class="px-6 py-2.5 rounded-xl font-bold text-sm transition-all bg-cyber-cyan text-black shadow-neon-cyan">
+                                <i class="fa-solid fa-circle-check text-black mr-2"></i> After Sonal (Optimized)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Score Comparison Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        
+                        <!-- Visual Gauge Representation -->
+                        <div class="flex flex-col items-center justify-center p-8 bg-slate-900/60 rounded-2xl border border-slate-800">
+                            <div class="relative w-40 h-40 flex items-center justify-center">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="42" stroke="currentColor" stroke-width="8" class="text-slate-800" fill="transparent"></circle>
+                                    <circle id="compGauge" cx="50" cy="50" r="42" stroke="#00F0FF" stroke-width="8" stroke-dasharray="264" stroke-dashoffset="5" stroke-linecap="round" class="gauge-circle" fill="transparent"></circle>
+                                </svg>
+                                <div class="absolute text-center">
+                                    <span id="compScore" class="text-5xl font-black text-white font-mono">98</span>
+                                    <span id="compStatus" class="block text-xs font-bold text-emerald-400 mt-1">EXCELLENT</span>
+                                </div>
+                            </div>
+                            <span class="text-xs text-slate-400 mt-4 font-mono">Google Lighthouse Score</span>
+                        </div>
+
+                        <!-- Metric Details Breakdown -->
+                        <div class="space-y-4">
+                            <!-- Metric 1 -->
+                            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex justify-between items-center">
+                                <div>
+                                    <p class="text-sm font-bold text-slate-200">Load Speed (TTLB)</p>
+                                    <p class="text-xs text-slate-400">Total Page Render Time</p>
+                                </div>
+                                <span id="compMetricSpeed" class="text-xl font-bold font-mono text-emerald-400">0.8 s</span>
+                            </div>
+
+                            <!-- Metric 2 -->
+                            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex justify-between items-center">
+                                <div>
+                                    <p class="text-sm font-bold text-slate-200">Largest Contentful Paint (LCP)</p>
+                                    <p class="text-xs text-slate-400">Main Content Loading</p>
+                                </div>
+                                <span id="compMetricLcp" class="text-xl font-bold font-mono text-emerald-400">0.7 s</span>
+                            </div>
+
+                            <!-- Metric 3 -->
+                            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex justify-between items-center">
+                                <div>
+                                    <p class="text-sm font-bold text-slate-200">Cumulative Layout Shift (CLS)</p>
+                                    <p class="text-xs text-slate-400">Visual Stability Score</p>
+                                </div>
+                                <span id="compMetricCls" class="text-xl font-bold font-mono text-emerald-400">0.00</span>
+                            </div>
+
+                            <!-- Metric 4 -->
+                            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex justify-between items-center">
+                                <div>
+                                    <p class="text-sm font-bold text-slate-200">Total Page Payload</p>
+                                    <p class="text-xs text-slate-400">Network Transfer Size</p>
+                                </div>
+                                <span id="compMetricSize" class="text-xl font-bold font-mono text-emerald-400">620 KB</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO & CASE STUDIES (Filterable) -->
+        <section id="portfolio" class="py-20 bg-slate-900/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <div>
+                        <h2 class="text-xs uppercase font-bold text-cyber-cyan tracking-widest">Case Studies</h2>
+                        <p class="text-3xl sm:text-4xl font-extrabold text-white dark:text-white light:text-slate-900 mt-1">
+                            Proven Growth & Speed Proofs
+                        </p>
+                    </div>
+
+                    <!-- Filter Buttons -->
+                    <div class="flex flex-wrap gap-2" id="filterContainer">
+                        <button class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-cyber-cyan text-black" data-filter="all">All Projects</button>
+                        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800 text-slate-300 hover:text-white" data-filter="ecom">E-Commerce</button>
+                        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800 text-slate-300 hover:text-white" data-filter="saas">SaaS Brands</button>
+                        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800 text-slate-300 hover:text-white" data-filter="tech">Publisher / News</button>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
+                    
+                    <!-- Case Study 1 -->
+                    <div class="project-card glass-panel rounded-3xl border border-slate-800 overflow-hidden group hover:border-cyber-cyan/50 transition-all duration-300" data-category="ecom">
+                        <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center p-6">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-cyber-dark to-slate-900 opacity-90"></div>
+                            <div class="relative z-10 text-center">
+                                <span class="text-xs font-mono text-cyber-cyan bg-cyber-cyan/10 px-3 py-1 rounded-full border border-cyber-cyan/30">Shopify Plus Store</span>
+                                <h4 class="text-2xl font-bold text-white mt-2">Luxor Fashion</h4>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="grid grid-cols-2 gap-2 text-center">
+                                <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                                    <span class="block text-xl font-black text-emerald-400 font-mono">+240%</span>
+                                    <span class="text-[10px] text-slate-400 uppercase">Organic Sales</span>
+                                </div>
+                                <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                                    <span class="block text-xl font-black text-cyber-cyan font-mono">5.4s → 0.7s</span>
+                                    <span class="text-[10px] text-slate-400 uppercase">Load Time</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                Complete Shopify Liquid asset optimization, lazy-loading script engine execution, and custom canonical taxonomy restructuring.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 2 -->
+                    <div class="project-card glass-panel rounded-3xl border border-slate-800 overflow-hidden group hover:border-cyber-purple/50 transition-all duration-300" data-category="saas">
+                        <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center p-6">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-cyber-dark to-slate-900 opacity-90"></div>
+                            <div class="relative z-10 text-center">
+                                <span class="text-xs font-mono text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/30">B2B SaaS Engine</span>
+                                <h4 class="text-2xl font-bold text-white mt-2">CloudMetrics HQ</h4>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="grid grid-cols-2 gap-2 text-center">
+                                <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                                    <span class="block text-xl font-black text-emerald-400 font-mono">100 / 100</span>
+                                    <span class="text-[10px] text-slate-400 uppercase">Desktop Score</span>
+                                </div>
+                                <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                                    <span class="block text-xl font-black text-purple-400 font-mono">3.1x</span>
+                                    <span class="text-[10px] text-slate-400 uppercase">Trial Signups</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                Resolved Next.js SSR hydration bottlenecks, optimized dynamic font loading, and resolved complex JavaScript execution layout shifts.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 3 -->
+                    <div class="project-card glass-panel rounded-3xl border border-slate-800 overflow-hidden group hover:border-blue-500/50 transition-all duration-300" data-category="tech">
+                        <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center p-6">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-cyber-dark to-slate-900 opacity-90"></div>
+                            <div class="relative z-10 text-center">
+                                <span class="text-xs font-mono text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/30">News Publication</span>
+                                <h4 class="text-2xl font-bold text-white mt-2">TechChronicle</h4>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="grid grid-cols-2 gap-2 text-center">
+                                <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                                    <span class="block text-xl font-black text-emerald-400 font-mono">+1.2M</span>
+                                    <span class="text-[10px] text-slate-400 uppercase">Monthly Visits</span>
+                                </div>
+                                <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                                    <span class="block text-xl font-black text-blue-400 font-mono">Passed</span>
+                                    <span class="text-[10px] text-slate-400 uppercase">Core Web Vitals</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                Optimized ad scripts delay-hydration, implemented AMP-free mobile optimization, and corrected Google News schema markup.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS CAROUSEL -->
+        <section id="testimonials" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-xs uppercase font-bold text-cyber-cyan tracking-widest">Client Reviews</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white dark:text-white light:text-slate-900">
+                        Endorsed by Founders & Engineers
+                    </p>
+                </div>
+
+                <!-- Carousel Container -->
+                <div class="max-w-4xl mx-auto relative">
+                    <div id="testimonialCard" class="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-700/80 shadow-2xl transition-all duration-500">
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-6">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p id="testimonialQuote" class="text-slate-200 text-lg sm:text-xl italic font-light leading-relaxed mb-8">
+                            "Sonal turned our bloated WordPress site into a lightning-fast machine. Our Lighthouse speed score shot up from 38 to 99 in just 4 days, and our Google organic conversions doubled within 30 days!"
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-cyber-cyan to-cyber-purple flex items-center justify-center font-bold text-black text-lg">
+                                    <span id="testimonialAvatar">MD</span>
+                                </div>
+                                <div>
+                                    <h5 id="testimonialName" class="font-bold text-white text-base">Marcus Davies</h5>
+                                    <p id="testimonialTitle" class="text-xs text-cyber-cyan">CTO at Elevate Commerce</p>
+                                </div>
+                            </div>
+
+                            <!-- Carousel Buttons -->
+                            <div class="flex items-center gap-2">
+                                <button id="prevTestimonial" aria-label="Previous Testimonial" class="p-3 rounded-xl bg-slate-800 hover:bg-cyber-cyan hover:text-black transition-colors">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                                <button id="nextTestimonial" aria-label="Next Testimonial" class="p-3 rounded-xl bg-slate-800 hover:bg-cyber-cyan hover:text-black transition-colors">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FREE AUDIT & LEAD CAPTURE FORM -->
+        <section id="audit" class="py-20 relative bg-slate-900/60">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="glass-panel rounded-3xl border border-cyber-cyan/40 p-8 sm:p-12 shadow-neon-cyan/20">
+                    <div class="text-center max-w-xl mx-auto mb-10 space-y-3">
+                        <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyber-cyan/10 text-cyber-cyan border border-cyber-cyan/30">100% Free • No Credit Card Required</span>
+                        <h2 class="text-3xl font-black text-white dark:text-white light:text-slate-900">
+                            Claim Your Free Technical & Speed Audit
+                        </h2>
+                        <p class="text-slate-400 text-sm">
+                            Receive a personalized 15-point diagnostic video and report outlining exactly why your site is slow and how to boost your Google rankings.
+                        </p>
+                    </div>
+
+                    <!-- Interactive Form -->
+                    <form id="auditForm" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Field 1: Name -->
+                            <div>
+                                <label for="auditName" class="block text-xs font-semibold uppercase text-slate-300 mb-2">Your Name</label>
+                                <input type="text" id="auditName" required placeholder="Sonal Sharma" class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-800 focus:border-cyber-cyan focus:outline-none text-sm text-white transition-colors">
+                            </div>
+
+                            <!-- Field 2: Email -->
+                            <div>
+                                <label for="auditEmail" class="block text-xs font-semibold uppercase text-slate-300 mb-2">Work Email</label>
+                                <input type="email" id="auditEmail" required placeholder="sonal@company.com" class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-800 focus:border-cyber-cyan focus:outline-none text-sm text-white transition-colors">
+                            </div>
+                        </div>
+
+                        <!-- Field 3: Website URL -->
+                        <div>
+                            <label for="auditUrl" class="block text-xs font-semibold uppercase text-slate-300 mb-2">Website URL</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3.5 text-slate-500 text-sm font-mono"><i class="fa-solid fa-globe"></i></span>
+                                <input type="url" id="auditUrl" required placeholder="https://yourwebsite.com" class="w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-900 border border-slate-800 focus:border-cyber-cyan focus:outline-none text-sm text-white font-mono transition-colors">
+                            </div>
+                        </div>
+
+                        <!-- Field 4: Target Objective -->
+                        <div>
+                            <label for="auditGoal" class="block text-xs font-semibold uppercase text-slate-300 mb-2">Primary Goal</label>
+                            <select id="auditGoal" class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-800 focus:border-cyber-cyan focus:outline-none text-sm text-slate-300 transition-colors">
+                                <option value="speed">Pass Core Web Vitals & Speed Up Loading</option>
+                                <option value="seo">Fix Technical SEO & Indexing Errors</option>
+                                <option value="cro">Increase Conversion Rate & Organic Sales</option>
+                                <option value="all">Complete Full Website Overhaul</option>
+                            </select>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submitAuditBtn" class="w-full py-4 rounded-xl font-extrabold text-black bg-gradient-to-r from-cyber-cyan via-blue-400 to-cyber-purple hover:shadow-neon-cyan transform hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+                            <span>Get My Free Audit Report</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <!-- Confirmation Modal Box -->
+                    <div id="formSuccessModal" class="hidden text-center py-10 space-y-4">
+                        <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500 flex items-center justify-center text-3xl mx-auto">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Audit Request Received!</h3>
+                        <p class="text-slate-300 text-sm max-w-md mx-auto">
+                            Thanks! Sonal is reviewing your website. You will receive your video breakdown and speed report at your email within 24 hours.
+                        </p>
+                        <button id="resetFormBtn" class="px-6 py-2.5 rounded-xl bg-slate-800 text-xs font-bold text-slate-300 hover:text-white transition-colors">
+                            Submit Another Website
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-cyber-dark py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-cyber-cyan flex items-center justify-center font-bold text-black">
+                    S
+                </div>
+                <span class="text-lg font-bold text-white">SONAL<span class="text-cyber-cyan">.SEO</span></span>
+            </div>
+
+            <p class="text-xs text-slate-500 text-center">
+                &copy; <span id="currentYear"></span> Sonal. All Rights Reserved. Engineered for Ultimate Speed & Google Rankings.
+            </p>
+
+            <div class="flex space-x-4 text-slate-400">
+                <a href="#" aria-label="Twitter Profile" class="hover:text-cyber-cyan transition-colors"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                <a href="#" aria-label="LinkedIn Profile" class="hover:text-cyber-cyan transition-colors"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                <a href="#" aria-label="GitHub Profile" class="hover:text-cyber-cyan transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT CODE LOGIC -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // 1. TYPING ANIMATION IN HERO
+        const typingKeywords = [
+            "SEO Optimization",
+            "Page Speed Enhancement",
+            "Core Web Vitals Specialist",
+            "Conversion Rate Optimization"
+        ];
+        let typeIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const typingTextEl = document.getElementById('typingText');
+
+        function handleTyping() {
+            const currentWord = typingKeywords[typeIndex];
+            
+            if (isDeleting) {
+                typingTextEl.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingTextEl.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let delta = isDeleting ? typingSpeed / 2 : typingSpeed;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                delta = 2000; // Pause at top
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                typeIndex = (typeIndex + 1) % typingKeywords.length;
+                delta = 500;
+            }
+
+            setTimeout(handleTyping, delta);
+        }
+
+        // Start typing on DOM load
+        document.addEventListener('DOMContentLoaded', handleTyping);
+
+        // 2. COUNTER ANIMATION FOR HERO STATS
+        const counters = document.querySelectorAll('.counter');
+        let counterAnimated = false;
+
+        function runCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const speed = target / 50;
+
+                const updateCount = () => {
+                    count += speed;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count);
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        // Animated Gauge Score in Hero
+        function animateHeroGauge() {
+            const gauge = document.getElementById('heroGauge');
+            const scoreVal = document.getElementById('heroScoreVal');
+            let currentScore = 0;
+            const targetScore = 99;
+
+            // Circumference of SVG circle (2 * pi * 42) ~ 264
+            const maxOffset = 264;
+            
+            const timer = setInterval(() => {
+                currentScore++;
+                scoreVal.textContent = currentScore;
+                
+                const offset = maxOffset - (currentScore / 100) * maxOffset;
+                gauge.style.strokeDashoffset = offset;
+
+                if (currentScore >= targetScore) {
+                    clearInterval(timer);
+                }
+            }, 20);
+        }
+
+        window.addEventListener('load', () => {
+            animateHeroGauge();
+            runCounters();
+        });
+
+        // 3. INTERACTIVE ROI CALCULATOR
+        const speedSlider = document.getElementById('speedSlider');
+        const trafficSlider = document.getElementById('trafficSlider');
+        const orderSlider = document.getElementById('orderSlider');
+
+        const speedVal = document.getElementById('speedVal');
+        const trafficVal = document.getElementById('trafficVal');
+        const orderVal = document.getElementById('orderVal');
+
+        const lostRevenueEl = document.getElementById('lostRevenue');
+        const trafficGainEl = document.getElementById('trafficGain');
+
+        function calculateROI() {
+            const currentSpeed = parseFloat(speedSlider.value);
+            const monthlyTraffic = parseInt(trafficSlider.value);
+            const orderValue = parseFloat(orderSlider.value);
+
+            // Text display updates
+            speedVal.textContent = currentSpeed.toFixed(1) + ' s';
+            trafficVal.textContent = monthlyTraffic.toLocaleString();
+            orderVal.textContent = '$ ' + orderValue.toLocaleString();
+
+            // Calculation formula
+            // Assume 1 second delay over optimal 1.0s drops conversions by 7%
+            const speedDelay = Math.max(0, currentSpeed - 1.0);
+            const conversionDropFactor = speedDelay * 0.07; // 7% per second
+            
+            // Baseline 2% conversion rate
+            const baselineConversions = monthlyTraffic * 0.02;
+            const lostConversionsMonthly = baselineConversions * conversionDropFactor;
+            const lostRevenueYearly = Math.round(lostConversionsMonthly * orderValue * 12);
+
+            // Estimated organic traffic gain from Google algorithm ranking boost
+            const potentialTrafficIncrease = Math.round(monthlyTraffic * (speedDelay * 0.06));
+
+            // Animate / Format outputs
+            lostRevenueEl.textContent = '$' + lostRevenueYearly.toLocaleString();
+            trafficGainEl.textContent = '+' + potentialTrafficIncrease.toLocaleString() + ' visits';
+        }
+
+        speedSlider.addEventListener('input', calculateROI);
+        trafficSlider.addEventListener('input', calculateROI);
+        orderSlider.addEventListener('input', calculateROI);
+        calculateROI(); // Initial run
+
+        // 4. BEFORE / AFTER COMPARISON TOGGLE
+        const beforeBtn = document.getElementById('beforeBtn');
+        const afterBtn = document.getElementById('afterBtn');
+        const compScore = document.getElementById('compScore');
+        const compStatus = document.getElementById('compStatus');
+        const compGauge = document.getElementById('compGauge');
+
+        const compMetricSpeed = document.getElementById('compMetricSpeed');
+        const compMetricLcp = document.getElementById('compMetricLcp');
+        const compMetricCls = document.getElementById('compMetricCls');
+        const compMetricSize = document.getElementById('compMetricSize');
+
+        function setComparisonState(isAfter) {
+            const maxOffset = 264;
+            if (isAfter) {
+                // AFTER OPTIMIZATION STATE
+                afterBtn.className = "px-6 py-2.5 rounded-xl font-bold text-sm transition-all bg-cyber-cyan text-black shadow-neon-cyan";
+                beforeBtn.className = "px-6 py-2.5 rounded-xl font-bold text-sm transition-all bg-slate-800 text-slate-400 hover:text-white";
+                
+                compScore.textContent = "98";
+                compStatus.textContent = "EXCELLENT";
+                compStatus.className = "block text-xs font-bold text-emerald-400 mt-1";
+                compGauge.setAttribute('stroke', '#00F0FF');
+                compGauge.style.strokeDashoffset = maxOffset - (98 / 100) * maxOffset;
+
+                compMetricSpeed.textContent = "0.8 s";
+                compMetricSpeed.className = "text-xl font-bold font-mono text-emerald-400";
+                
+                compMetricLcp.textContent = "0.7 s";
+                compMetricLcp.className = "text-xl font-bold font-mono text-emerald-400";
+
+                compMetricCls.textContent = "0.00";
+                compMetricCls.className = "text-xl font-bold font-mono text-emerald-400";
+
+                compMetricSize.textContent = "620 KB";
+                compMetricSize.className = "text-xl font-bold font-mono text-emerald-400";
+            } else {
+                // BEFORE OPTIMIZATION STATE
+                beforeBtn.className = "px-6 py-2.5 rounded-xl font-bold text-sm transition-all bg-amber-500 text-black shadow-lg";
+                afterBtn.className = "px-6 py-2.5 rounded-xl font-bold text-sm transition-all bg-slate-800 text-slate-400 hover:text-white";
+                
+                compScore.textContent = "45";
+                compStatus.textContent = "POOR";
+                compStatus.className = "block text-xs font-bold text-red-500 mt-1";
+                compGauge.setAttribute('stroke', '#EF4444');
+                compGauge.style.strokeDashoffset = maxOffset - (45 / 100) * maxOffset;
+
+                compMetricSpeed.textContent = "5.2 s";
+                compMetricSpeed.className = "text-xl font-bold font-mono text-red-500";
+                
+                compMetricLcp.textContent = "4.8 s";
+                compMetricLcp.className = "text-xl font-bold font-mono text-red-500";
+
+                compMetricCls.textContent = "0.38";
+                compMetricCls.className = "text-xl font-bold font-mono text-red-500";
+
+                compMetricSize.textContent = "4.8 MB";
+                compMetricSize.className = "text-xl font-bold font-mono text-red-500";
+            }
+        }
+
+        beforeBtn.addEventListener('click', () => setComparisonState(false));
+        afterBtn.addEventListener('click', () => setComparisonState(true));
+
+        // 5. PORTFOLIO FILTERABLE TAGS
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active classes
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-cyber-cyan', 'text-black', 'active');
+                    b.classList.add('bg-slate-800', 'text-slate-300');
+                });
+
+                // Add active style
+                btn.classList.add('bg-cyber-cyan', 'text-black', 'active');
+                btn.classList.remove('bg-slate-800', 'text-slate-300');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 6. TESTIMONIALS CAROUSEL DATA & LOGIC
+        const testimonialsData = [
+            {
+                quote: `"Sonal turned our bloated WordPress e-commerce store into a lightning-fast machine. Our Lighthouse speed score shot up from 38 to 99 in just 4 days, and our organic sales doubled!"`,
+                avatar: "MD",
+                name: "Marcus Davies",
+                title: "CTO at Elevate Commerce"
+            },
+            {
+                quote: `"Passing Core Web Vitals seemed impossible with our legacy React stack. Sonal resolved our main thread JS execution issues effortlessly. Search impressions went up 180%."`,
+                avatar: "SK",
+                name: "Sarah Jenkins",
+                title: "VP of Product at CloudMetrics"
+            },
+            {
+                quote: `"The ROI was immediate. Sonal's optimization reduced our mobile bounce rate by 34%, leading to a direct increase in our monthly recurring revenue."`,
+                avatar: "AH",
+                name: "Alex Thorne",
+                title: "Founder at Apex Tech Solutions"
+            }
+        ];
+
+        let testimonialIndex = 0;
+        const testimonialQuote = document.getElementById('testimonialQuote');
+        const testimonialAvatar = document.getElementById('testimonialAvatar');
+        const testimonialName = document.getElementById('testimonialName');
+        const testimonialTitle = document.getElementById('testimonialTitle');
+
+        function updateTestimonial(index) {
+            const data = testimonialsData[index];
+            testimonialQuote.textContent = data.quote;
+            testimonialAvatar.textContent = data.avatar;
+            testimonialName.textContent = data.name;
+            testimonialTitle.textContent = data.title;
+        }
+
+        document.getElementById('nextTestimonial').addEventListener('click', () => {
+            testimonialIndex = (testimonialIndex + 1) % testimonialsData.length;
+            updateTestimonial(testimonialIndex);
+        });
+
+        document.getElementById('prevTestimonial').addEventListener('click', () => {
+            testimonialIndex = (testimonialIndex - 1 + testimonialsData.length) % testimonialsData.length;
+            updateTestimonial(testimonialIndex);
+        });
+
+        // 7. LIGHT/DARK MODE TOGGLE SYSTEM
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeToggleBtnMobile = document.getElementById('themeToggleBtnMobile');
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.remove('light');
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        themeToggleBtnMobile.addEventListener('click', toggleTheme);
+
+        // 8. MOBILE MENU TOGGLE
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 9. AUDIT FORM SUBMISSION HANDLING
+        const auditForm = document.getElementById('auditForm');
+        const formSuccessModal = document.getElementById('formSuccessModal');
+        const resetFormBtn = document.getElementById('resetFormBtn');
+
+        auditForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show loading state on button
+            const submitBtn = document.getElementById('submitAuditBtn');
+            submitBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Analyzing Website...`;
+
+            setTimeout(() => {
+                auditForm.classList.add('hidden');
+                formSuccessModal.classList.remove('hidden');
+            }, 1200);
+        });
+
+        resetFormBtn.addEventListener('click', () => {
+            auditForm.reset();
+            formSuccessModal.classList.add('hidden');
+            auditForm.classList.remove('hidden');
+            document.getElementById('submitAuditBtn').innerHTML = `<span>Get My Free Audit Report</span> <i class="fa-solid fa-arrow-right"></i>`;
+        });
+    </script>
+</body>
+</html>
